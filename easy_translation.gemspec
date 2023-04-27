@@ -8,14 +8,14 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Easy Translation}
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "https://github.com/tauqeer-ahmad/easy-translations.git"
+  spec.homepage      = "https://github.com/AyishmAziz123/easy_translation.git"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/tauqeer-ahmad/easy-translations.git"
+  spec.metadata["source_code_uri"] = "https://github.com/AyishmAziz123/easy_translation.git"
   spec.metadata["changelog_uri"] = "https://github.com/standard/standard/blob/master/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
