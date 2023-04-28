@@ -14,7 +14,8 @@ class ChatGptService
     }
   end
 
-  def translate(message)
+  def translate(message, languages)
+    message = set_messsage_for_translation(message, languages)
     body = {
       model: options[:model],
       messages: [{ role: 'user', content: message }]
@@ -25,5 +26,17 @@ class ChatGptService
     rescue Exception => e
       "Chat gpt sent an invalid response #{e.message}"
     end
+  end
+
+  private
+
+  def set_messsage_for_translation(message, languages)
+    message = if message.is_a? String
+                "Translate this #{message} into these languages #{languages}"
+              else
+                file_data = YAML.load(File.read(message.path))
+                "Translate only the values after the colon sign, in string into these languages #{languages} and return response in the standard .yml format #{file_data}"
+              end
+    message
   end
 end

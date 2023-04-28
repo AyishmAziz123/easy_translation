@@ -1,8 +1,9 @@
 # EasyTranslation
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/easy_translation`. To experiment with that code, run `bin/console` for an interactive prompt.
+easy_translation uses the ChatGPT API for providing two features.
 
-TODO: Delete this and the text above, and describe your gem
+1. To translate a single sentence into selected languages.
+2. To translate the values of YML file into selected languages.
 
 ## Installation
 
@@ -22,13 +23,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After the installation, first require the class in your file
 
-## Development
+    require 'chat_gpt_service'
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+then initialize the ChatGPT service with your API key
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+    chat_gpt = ChatGptService.new('your_api_key')
+
+and then call the translate method on the string.
+
+    chat_gpt.translate('your_string', [array_of_languages])
+
+this will return the translated string into the required languages.
+
+or if you want to translate your YML file
+
+    chat_gpt.translate(your_file_object, [array_of_languages])
+
+this will download the translated yml file.
 
 ## Contributing
 
